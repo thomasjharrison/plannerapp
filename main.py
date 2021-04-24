@@ -23,7 +23,7 @@ def countBoards():
 
     files = os.listdir(__file__.replace("\\main.py", "") + "\\boards") #create array of filenames in given directory
     for file in files: #for every filename stored in the files aray
-        with open(r"C:\Users\thoma\Desktop\programming project\code\boards\\" + str(file)) as board: #open the board input
+        with open(__file__.replace("\\main.py", "") + "\\boards\\" + str(file)) as board: #open the board input
             boardData = json.load(board) #save the contents of the board to a dictionary
         board.close() #close the board file as it is not in use anymore
         Boards.append((file, list(boardData.values())[0])) #add file tuple (filename, title flag) to Boards array
